@@ -1,0 +1,15 @@
+﻿@model List<U241017A.Data.Product>
+@{
+    ViewBag.Title = "currentbookings";
+}
+
+<h2>Bokningar</h2>
+
+<ul>
+   @foreach (var item in Model)
+   {
+    <li><strong>Destination:</strong> @item.Name <strong>Typ:</strong> @item.Event <strong>Datum:</strong> @item.Date <strong>Plats:</strong> @item.Location @Html.ActionLink("Remove", "RemoveProduct", new { id = item.Id })</li>
+   }
+</ul>
+
+@Html.ActionLink("Gör en bokning", "book")
